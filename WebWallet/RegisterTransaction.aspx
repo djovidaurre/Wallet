@@ -16,7 +16,7 @@
          </div>
          <div>
             <asp:Label Id="lbl_IdTypeTransaction" Text="Id Transaction:" runat="server" ></asp:Label>
-            <asp:TextBox Id="txt_IdTypeTransaction" runat="server"></asp:TextBox>
+            <asp:TextBox Id="txt_IdTransaction" runat="server"></asp:TextBox>
          </div>
          <div>
             <asp:Label Id="lbl_Amount" Text="Id Amount:" runat="server" ></asp:Label>
@@ -24,7 +24,6 @@
          </div>
             <asp:Button ID="bnt_Register" Text="Register"  runat="server" OnClick="bnt_Registro_Click" />
          <div>
-            
              <asp:Label Id="lbl_balance" Text="Closing Balance:" runat="server" ></asp:Label>
          </div>
          <div>

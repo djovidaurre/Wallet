@@ -8,3 +8,5 @@ Feature: Consultar  informacion de billetera de cliente
      And Llenar el campo de IdBilletera
      And Hacer click en el boton Consultar
      Then Se debe mostrar la cadena "0,0"
+
+     

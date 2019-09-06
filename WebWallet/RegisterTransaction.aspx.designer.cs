@@ -58,13 +58,13 @@ namespace WebWallet {
         protected global::System.Web.UI.WebControls.Label lbl_IdTypeTransaction;
         
         /// <summary>
-        /// Control txt_IdTypeTransaction.
+        /// Control txt_IdTransaction.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_IdTypeTransaction;
+        protected global::System.Web.UI.WebControls.TextBox txt_IdTransaction;
         
         /// <summary>
         /// Control lbl_Amount.

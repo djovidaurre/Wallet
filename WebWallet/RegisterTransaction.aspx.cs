@@ -79,7 +79,7 @@ namespace WebWallet
         protected void bnt_Registro_Click(object sender, EventArgs e)
         {
             var idBilletera = Convert.ToInt32(txt_IdWallet.Text);
-            var idTipoTransaccion = Convert.ToByte(txt_IdTypeTransaction.Text);
+            var idTipoTransaccion = Convert.ToByte(txt_IdTransaction.Text);
             var monto = Convert.ToDecimal(txt_Amount.Text);
 
  
