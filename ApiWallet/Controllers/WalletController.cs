@@ -83,9 +83,7 @@ namespace ApiWallet.Controllers
 
             #region Proceso
 
-            var result = _model.RegisterTransaction(param);
-
-            return result;
+            return _model.RegisterTransaction(param);
 
             #endregion
 
@@ -111,9 +109,7 @@ namespace ApiWallet.Controllers
 
             #region Proceso
 
-            var result = _model.ConsultTransaction(param);
-
-            return result;
+            return  _model.ConsultTransaction(param);
 
             #endregion
 
@@ -139,9 +135,7 @@ namespace ApiWallet.Controllers
 
             #region Proceso
 
-            var result = _model.ResetBalanceTransaccion(param);
-
-            return result;
+            return _model.ResetBalanceTransaccion(param);
 
             #endregion
 
