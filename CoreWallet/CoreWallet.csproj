@@ -41,7 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bussiness\BCustomer.cs" />
+    <Compile Include="Bussiness\Resource\ResourceCustomer.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceCustomer.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Param\CustomerParam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Result\CustomerDto.cs" />
+    <Compile Include="Result\Error.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Bussiness\Resource\ResourceCustomer.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceCustomer.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
