@@ -28,6 +28,63 @@ namespace UnitTest
 
         }
 
+        [TestMethod]
+        public void UnitTestRegisterCustomerWithOutSurName()
+        {
+            var customer = ConsultarApi(
+                new CustomerParam()
+                {
+                    FirstName = "Josue",
+                    SurName = "",
+                    Email = "djovidaurre@gmail.com",
+                    DateOfBirth = new DateTime(1990, 12, 18)
+                }, recurso.RegistrarCliente
+                );
+
+            var expected = false;
+
+            Assert.AreEqual(expected, customer.Response);
+
+        }
+
+
+        [TestMethod]
+        public void UnitTestRegisterCustomerWithOutEmail()
+        {
+            var customer = ConsultarApi(
+                new CustomerParam()
+                {
+                    FirstName = "Josue",
+                    SurName = "Ortiz",
+                    Email = "",
+                    DateOfBirth = new DateTime(1990, 12, 18)
+                }, recurso.RegistrarCliente
+                );
+
+            var expected = false;
+
+            Assert.AreEqual(expected, customer.Response);
+
+        }
+
+        [TestMethod]
+        public void UnitTestRegisterCustomerWithOutDateOfBirth()
+        {
+            var customer = ConsultarApi(
+                new CustomerParam()
+                {
+                    FirstName = "Josue",
+                    SurName = "Ortiz",
+                    Email = "djovidaurre@gmail.com"
+                }, recurso.RegistrarCliente
+                );
+
+            var expected = true;
+
+            Assert.AreEqual(expected, customer.Response);
+
+        }
+
 
 
         public CustomerDto ConsultarApi(CustomerParam param, string urlApi)
