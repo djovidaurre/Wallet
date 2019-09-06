@@ -126,6 +126,9 @@
   <data name="RegistrarTransaccion" xml:space="preserve">
     <value>/register/transaction</value>
   </data>
+  <data name="ResetBalanceWallet" xml:space="preserve">
+    <value>/reset/balanceTransaction</value>
+  </data>
   <data name="UrlApiWallet" xml:space="preserve">
     <value>http://localhost/ApiWallet/api/v1.0/wallet{0}</value>
   </data>

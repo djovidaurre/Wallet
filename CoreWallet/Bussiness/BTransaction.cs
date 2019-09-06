@@ -121,5 +121,39 @@ namespace CoreWallet.Bussiness
             return result;
 
         }
+
+        public TransactionDto ResetBalanceTransaction(ConsultTransactionParam param)
+        {
+            var result = new TransactionDto();
+            result.Response = false;
+
+            try
+            {
+                #region Validaciones
+
+                if (param.IdBilletera < 0)
+                {
+                    result.Messages.Add(new Error() { Message = recurso.IdBilletera });
+                }
+
+                if (result.Messages.Count == 0)
+                {
+                    result.Response = true;
+                    BDFile.EscribeEnArchivo("", recursoBD.UrlFile);
+                    result.Balance = 0;
+
+                }
+
+
+                #endregion
+            }
+            catch (Exception ex)
+            {
+                result.Messages.Add(new Error() { Message = ex.Message });
+
+            }
+            return result;
+
+        }
     }
 }

@@ -160,6 +160,13 @@ namespace UnitTest
                 IdTipoTransaccion = 2,
                 Monto = 100
             };
+
+            // Primero resetear lo anterior
+            var transaction = ConsultarApi(
+                JsonConvert.SerializeObject(trans),
+                recurso.ResetBalanceWallet
+                );
+
             var transction = ConsultarApi(
                 JsonConvert.SerializeObject(trans),
                 recurso.RegistrarTransaccion
@@ -204,6 +211,12 @@ namespace UnitTest
                 Monto = -200
             };
 
+            // Primero resetear lo anterior
+            var transaction = ConsultarApi(
+                JsonConvert.SerializeObject(trans1),
+                recurso.ResetBalanceWallet
+                );
+
 
             var transaction1 = ConsultarApi(
                 JsonConvert.SerializeObject(trans1),
@@ -232,6 +245,7 @@ namespace UnitTest
         [TestMethod]
         public void UnitTestConsultBalanceWallet()
         {
+
             var trans = new ConsultTransactionParam()
             {
                 IdBilletera = 1
@@ -244,9 +258,30 @@ namespace UnitTest
 
             var result = JsonConvert.DeserializeObject<TransactionDto>(transction.Content);
 
-            var expected = 200;
+            var expected = true;
 
-            Assert.AreEqual(expected, result.Balance);
+            Assert.AreEqual(expected, result.Response);
+
+        }
+
+        [TestMethod]
+        public void UnitTestResetBalanceWallet()
+        {
+            var trans = new ConsultTransactionParam()
+            {
+                IdBilletera = 1
+            };
+            var transction = ConsultarApi(
+                JsonConvert.SerializeObject(trans),
+                recurso.ResetBalanceWallet
+                );
+
+
+            var result = JsonConvert.DeserializeObject<TransactionDto>(transction.Content);
+
+            var expected = true;
+
+            Assert.AreEqual(expected, result.Response);
 
         }
 

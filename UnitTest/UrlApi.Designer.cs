@@ -88,6 +88,15 @@ namespace UnitTest {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a /reset/balanceTransaction.
+        /// </summary>
+        internal static string ResetBalanceWallet {
+            get {
+                return ResourceManager.GetString("ResetBalanceWallet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a http://localhost/ApiWallet/api/v1.0/wallet{0}.
         /// </summary>
         internal static string UrlApiWallet {

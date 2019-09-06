@@ -98,6 +98,30 @@ namespace ApiWallet.Models
             return result;
         }
 
+
+        public TransactionDto ResetBalanceTransaccion(ConsultTransactionParam param)
+        {
+            var result = new TransactionDto();
+
+            try
+            {
+
+                #region Proceso
+
+                result = _transaction.ResetBalanceTransaction(param);
+
+                #endregion
+
+            }
+            catch (Exception Ex)
+            {
+                result.Messages.Add(new Error() { Message = Ex.Message });
+            }
+
+            return result;
+        }
+
+        
         #endregion
     }
 }

@@ -119,5 +119,33 @@ namespace ApiWallet.Controllers
 
         }
 
+        /// <summary>
+        /// Service to reset balance transaction
+        /// </summary>
+        /// <returns>Reset balance transaction</returns>
+        /// <remarks>
+        /// Reset balance transaction
+        /// </remarks>
+        /// <response code="200">Operación Exitosa.</response>
+        /// <response code="400">Solicitud Incorrecta.</response>        
+        /// <response code="404">No Encontrado.</response>
+        /// <response code="500">Error Interno de Servidor.</response>
+        [AllowAnonymous]
+        [ResponseType(typeof(OperationResult))]
+        [HttpPost]
+        [Route("reset/balanceTransaction")]
+        public TransactionDto ResetBalanceTransaction(ConsultTransactionParam param)
+        {
+
+            #region Proceso
+
+            var result = _model.ResetBalanceTransaccion(param);
+
+            return result;
+
+            #endregion
+
+        }
+
     }
 }
