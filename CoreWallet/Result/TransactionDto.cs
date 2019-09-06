@@ -9,6 +9,7 @@ namespace CoreWallet.Result
     public class TransactionDto
     {
         public bool Response { get; set; }
+        public decimal Amount { get; set; }
         public decimal Balance { get; set; }
         public List<Error> Messages { get; set; }
 

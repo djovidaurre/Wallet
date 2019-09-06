@@ -11,6 +11,21 @@ namespace CoreWallet.Bussiness
 {
     public class BTransaction
     {
+        #region Atributos
+
+        public decimal _balance;
+
+        #endregion
+
+        #region Constructor
+
+        public BTransaction()
+        {
+            _balance = 0;
+        }
+
+        #endregion
+
         public TransactionDto RegisterTransaction(TransactionParam param)
         {
             var result = new TransactionDto();
@@ -38,6 +53,9 @@ namespace CoreWallet.Bussiness
                 if (result.Messages.Count == 0)
                 {
                     result.Response = true;
+                    _balance = _balance + param.Monto;
+                    result.Balance = _balance;
+
                 }
 
 

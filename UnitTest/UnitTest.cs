@@ -151,6 +151,29 @@ namespace UnitTest
 
         }
 
+        [TestMethod]
+        public void UnitTestRegisterTransactionValidationofCountableIncome()
+        {
+            var trans = new TransactionParam()
+            {
+                IdBilletera = 1,
+                IdTipoTransaccion = 1,
+                Monto = 100
+            };
+            var transction = ConsultarApi(
+                JsonConvert.SerializeObject(trans),
+                recurso.RegistrarTransaccion
+                );
+
+
+            var result = JsonConvert.DeserializeObject<TransactionDto>(transction.Content);
+
+            var expected = 100;
+
+            Assert.AreEqual(expected, result.Balance);
+
+        }
+
 
         public IRestResponse ConsultarApi(string json, string urlApi)
         {
