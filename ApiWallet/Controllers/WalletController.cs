@@ -63,5 +63,33 @@ namespace ApiWallet.Controllers
 
         }
 
+        /// <summary>
+        /// Service to register transaction
+        /// </summary>
+        /// <returns>Register transaction</returns>
+        /// <remarks>
+        /// Register transaction
+        /// </remarks>
+        /// <response code="200">Operación Exitosa.</response>
+        /// <response code="400">Solicitud Incorrecta.</response>        
+        /// <response code="404">No Encontrado.</response>
+        /// <response code="500">Error Interno de Servidor.</response>
+        [AllowAnonymous]
+        [ResponseType(typeof(OperationResult))]
+        [HttpPost]
+        [Route("register/transaction")]
+        public TransactionDto RegisterTransaction(TransactionParam param)
+        {
+
+            #region Proceso
+
+            var result = _model.RegisterTransaction(param);
+
+            return result;
+
+            #endregion
+
+        }
+
     }
 }

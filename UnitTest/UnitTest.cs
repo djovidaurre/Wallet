@@ -85,6 +85,29 @@ namespace UnitTest
 
         }
 
+        [TestMethod]
+        public void UnitTestRegisterTransaction()
+        {
+            var trans = new TransactionParam()
+            {
+                IdBilletera = 1,
+                IdTipoTransaccion = 1,
+                Monto = 100
+            };
+            var transction = ConsultarApi(
+                JsonConvert.SerializeObject(trans), 
+                recurso.RegistrarTransaccion
+                );
+
+
+           var result = JsonConvert.DeserializeObject<TransactionDto>(transction.Content);
+
+            var expected = true;
+
+            Assert.AreEqual(expected, result.Response);
+
+        }
+
 
 
         public CustomerDto ConsultarApi(CustomerParam param, string urlApi)
@@ -104,9 +127,17 @@ namespace UnitTest
 
         }
 
+        public IRestResponse ConsultarApi(string json, string urlApi)
+        {
+            var url = string.Format(recurso.UrlApiWallet, urlApi);
+            var client = new RestClient(url);
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("cache-control", "no-cache");
+            request.AddHeader("Content-Type", "application/json");
+            request.AddParameter("undefined", json, ParameterType.RequestBody);
+            return client.Execute(request);
 
-
-
+        }
 
     }
 }

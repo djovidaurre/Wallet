@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnitTest {
+namespace CoreWallet.Bussiness.Resource {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace UnitTest {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class UrlApi {
+    internal class ResourceTransaction {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal UrlApi() {
+        internal ResourceTransaction() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace UnitTest {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("UnitTest.UrlApi", typeof(UrlApi).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CoreWallet.Bussiness.Resource.ResourceTransaction", typeof(ResourceTransaction).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,29 +61,29 @@ namespace UnitTest {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a /register/customer.
+        ///   Busca una cadena traducida similar a Debe ingresar un identificador de Billetera valido..
         /// </summary>
-        internal static string RegistrarCliente {
+        internal static string IdBilletera {
             get {
-                return ResourceManager.GetString("RegistrarCliente", resourceCulture);
+                return ResourceManager.GetString("IdBilletera", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a /register/transaction.
+        ///   Busca una cadena traducida similar a Debe ingresar un identificador de Transaccion valido..
         /// </summary>
-        internal static string RegistrarTransaccion {
+        internal static string IdTransaccion {
             get {
-                return ResourceManager.GetString("RegistrarTransaccion", resourceCulture);
+                return ResourceManager.GetString("IdTransaccion", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a http://localhost/ApiWallet/api/v1.0/wallet{0}.
+        ///   Busca una cadena traducida similar a Debe ingresar un monto valido..
         /// </summary>
-        internal static string UrlApiWallet {
+        internal static string Monto {
             get {
-                return ResourceManager.GetString("UrlApiWallet", resourceCulture);
+                return ResourceManager.GetString("Monto", resourceCulture);
             }
         }
     }

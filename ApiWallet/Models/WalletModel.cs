@@ -15,6 +15,7 @@ namespace ApiWallet.Models
         #region Atributos
 
         BCustomer _customer;
+        BTransaction _transaction;
 
         #endregion
 
@@ -23,6 +24,7 @@ namespace ApiWallet.Models
         public WalletModel()
         {
             _customer = new BCustomer();
+            _transaction = new BTransaction();
         }
 
         #endregion
@@ -40,6 +42,28 @@ namespace ApiWallet.Models
                 #region Proceso
 
                 result = _customer.RegisterCustomer(param);
+
+                #endregion
+
+            }
+            catch (Exception Ex)
+            {
+                result.Messages.Add(new Error() { Message = Ex.Message });
+            }
+
+            return result;
+        }
+
+        public TransactionDto RegisterTransaction(TransactionParam param)
+        {
+            var result = new TransactionDto();
+
+            try
+            {
+
+                #region Proceso
+
+                result = _transaction.RegisterTransaction(param);
 
                 #endregion
 

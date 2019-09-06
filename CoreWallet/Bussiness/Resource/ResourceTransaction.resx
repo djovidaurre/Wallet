@@ -117,13 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="RegistrarCliente" xml:space="preserve">
-    <value>/register/customer</value>
+  <data name="IdBilletera" xml:space="preserve">
+    <value>Debe ingresar un identificador de Billetera valido.</value>
   </data>
-  <data name="RegistrarTransaccion" xml:space="preserve">
-    <value>/register/transaction</value>
+  <data name="IdTransaccion" xml:space="preserve">
+    <value>Debe ingresar un identificador de Transaccion valido.</value>
   </data>
-  <data name="UrlApiWallet" xml:space="preserve">
-    <value>http://localhost/ApiWallet/api/v1.0/wallet{0}</value>
+  <data name="Monto" xml:space="preserve">
+    <value>Debe ingresar un monto valido.</value>
   </data>
 </root>
