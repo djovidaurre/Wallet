@@ -175,6 +175,62 @@ namespace UnitTest
         }
 
 
+        [TestMethod]
+        public void UnitTestRegisterTransactionMultiples()
+        {
+            // Ingreso 100 
+            var trans1 = new TransactionParam()
+            {
+                IdBilletera = 1,
+                IdTipoTransaccion = 1,
+                Monto = 100
+            };
+
+
+            // Ingreso 500 
+            var trans2 = new TransactionParam()
+            {
+                IdBilletera = 1,
+                IdTipoTransaccion = 1,
+                Monto = 500
+            };
+
+
+            // Egreso 200 
+            var trans3 = new TransactionParam()
+            {
+                IdBilletera = 1,
+                IdTipoTransaccion = 2,
+                Monto = -200
+            };
+
+
+            var transaction1 = ConsultarApi(
+                JsonConvert.SerializeObject(trans1),
+                recurso.RegistrarTransaccion
+                );
+
+            var transaction2 = ConsultarApi(
+                JsonConvert.SerializeObject(trans2),
+                recurso.RegistrarTransaccion
+                );
+
+            var transaction3 = ConsultarApi(
+                JsonConvert.SerializeObject(trans3),
+                recurso.RegistrarTransaccion
+                );
+
+
+            var result = JsonConvert.DeserializeObject<TransactionDto>(transaction3.Content);
+
+            var expected = 400;
+
+            Assert.AreEqual(expected, result.Balance);
+
+        }
+
+
+
         public IRestResponse ConsultarApi(string json, string urlApi)
         {
             var url = string.Format(recurso.UrlApiWallet, urlApi);

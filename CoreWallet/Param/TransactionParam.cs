@@ -11,5 +11,7 @@ namespace CoreWallet.Param
         public long IdBilletera { get; set; }
         public byte IdTipoTransaccion { get; set; }
         public decimal Monto { get; set; }
+
+      
     }
 }

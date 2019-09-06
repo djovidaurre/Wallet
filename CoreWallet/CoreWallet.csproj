@@ -53,6 +53,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceTransaction.resx</DependentUpon>
     </Compile>
+    <Compile Include="Bussiness\Resource\ResourceUtil.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceUtil.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\BDFile.cs" />
     <Compile Include="Param\CustomerParam.cs" />
     <Compile Include="Param\TransactionParam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,6 +74,10 @@
     <EmbeddedResource Include="Bussiness\Resource\ResourceTransaction.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceTransaction.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bussiness\Resource\ResourceUtil.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceUtil.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

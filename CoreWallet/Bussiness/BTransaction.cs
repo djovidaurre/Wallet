@@ -1,11 +1,14 @@
-﻿using CoreWallet.Param;
+﻿using CoreWallet.Helper;
+using CoreWallet.Param;
 using CoreWallet.Result;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using recurso = CoreWallet.Bussiness.Resource.ResourceTransaction;
+using recursoBD = CoreWallet.Bussiness.Resource.ResourceUtil;
 
 namespace CoreWallet.Bussiness
 {
@@ -53,7 +56,16 @@ namespace CoreWallet.Bussiness
                 if (result.Messages.Count == 0)
                 {
                     result.Response = true;
-                    _balance = _balance + param.Monto;
+                    var register =  BDFile.LeeArchivo(recursoBD.UrlFile);
+                    decimal balance = 0;
+                    if (!String.IsNullOrWhiteSpace(register))
+                    {
+                        balance = Convert.ToDecimal(register);
+                    }
+
+                    result.Amount = param.Monto;
+                    _balance = balance + param.Monto;
+                    BDFile.EscribeEnArchivo(_balance.ToString(), recursoBD.UrlFile);
                     result.Balance = _balance;
 
                 }
