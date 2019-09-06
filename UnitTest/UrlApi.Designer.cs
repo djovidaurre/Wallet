@@ -61,6 +61,15 @@ namespace UnitTest {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a /consult/transaction.
+        /// </summary>
+        internal static string ConsultarTransaccion {
+            get {
+                return ResourceManager.GetString("ConsultarTransaccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a /register/customer.
         /// </summary>
         internal static string RegistrarCliente {

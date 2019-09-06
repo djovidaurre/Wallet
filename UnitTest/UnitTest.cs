@@ -157,7 +157,7 @@ namespace UnitTest
             var trans = new TransactionParam()
             {
                 IdBilletera = 1,
-                IdTipoTransaccion = 1,
+                IdTipoTransaccion = 2,
                 Monto = 100
             };
             var transction = ConsultarApi(
@@ -187,12 +187,12 @@ namespace UnitTest
             };
 
 
-            // Ingreso 500 
+            // Ingreso 100 
             var trans2 = new TransactionParam()
             {
                 IdBilletera = 1,
                 IdTipoTransaccion = 1,
-                Monto = 500
+                Monto = 100
             };
 
 
@@ -223,7 +223,28 @@ namespace UnitTest
 
             var result = JsonConvert.DeserializeObject<TransactionDto>(transaction3.Content);
 
-            var expected = 400;
+            var expected = 0;
+
+            Assert.AreEqual(expected, result.Balance);
+
+        }
+
+        [TestMethod]
+        public void UnitTestConsultBalanceWallet()
+        {
+            var trans = new ConsultTransactionParam()
+            {
+                IdBilletera = 1
+            };
+            var transction = ConsultarApi(
+                JsonConvert.SerializeObject(trans),
+                recurso.ConsultarTransaccion
+                );
+
+
+            var result = JsonConvert.DeserializeObject<TransactionDto>(transction.Content);
+
+            var expected = 200;
 
             Assert.AreEqual(expected, result.Balance);
 

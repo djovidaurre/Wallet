@@ -81,5 +81,45 @@ namespace CoreWallet.Bussiness
             return result;
 
         }
+
+        public TransactionDto ConsultTransaction(ConsultTransactionParam param)
+        {
+            var result = new TransactionDto();
+            result.Response = false;
+
+            try
+            {
+                #region Validaciones
+
+                if (param.IdBilletera < 0)
+                {
+                    result.Messages.Add(new Error() { Message = recurso.IdBilletera });
+                }
+
+                if (result.Messages.Count == 0)
+                {
+                    result.Response = true;
+                    var register = BDFile.LeeArchivo(recursoBD.UrlFile);
+                    decimal balance = 0;
+                    if (!String.IsNullOrWhiteSpace(register))
+                    {
+                        balance = Convert.ToDecimal(register);
+                    }
+                    _balance = balance;
+                    result.Balance = _balance;
+
+                }
+
+
+                #endregion
+            }
+            catch (Exception ex)
+            {
+                result.Messages.Add(new Error() { Message = ex.Message });
+
+            }
+            return result;
+
+        }
     }
 }

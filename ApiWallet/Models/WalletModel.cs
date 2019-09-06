@@ -76,6 +76,28 @@ namespace ApiWallet.Models
             return result;
         }
 
+        public TransactionDto ConsultTransaction(ConsultTransactionParam param)
+        {
+            var result = new TransactionDto();
+
+            try
+            {
+
+                #region Proceso
+
+                result = _transaction.ConsultTransaction(param);
+
+                #endregion
+
+            }
+            catch (Exception Ex)
+            {
+                result.Messages.Add(new Error() { Message = Ex.Message });
+            }
+
+            return result;
+        }
+
         #endregion
     }
 }

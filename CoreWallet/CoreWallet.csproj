@@ -59,6 +59,7 @@
       <DependentUpon>ResourceUtil.resx</DependentUpon>
     </Compile>
     <Compile Include="Helper\BDFile.cs" />
+    <Compile Include="Param\ConsultTransactionParam.cs" />
     <Compile Include="Param\CustomerParam.cs" />
     <Compile Include="Param\TransactionParam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

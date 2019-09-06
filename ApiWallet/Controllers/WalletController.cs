@@ -91,5 +91,33 @@ namespace ApiWallet.Controllers
 
         }
 
+        /// <summary>
+        /// Service to consult transaction
+        /// </summary>
+        /// <returns>Consult transaction</returns>
+        /// <remarks>
+        /// Consult transaction
+        /// </remarks>
+        /// <response code="200">Operación Exitosa.</response>
+        /// <response code="400">Solicitud Incorrecta.</response>        
+        /// <response code="404">No Encontrado.</response>
+        /// <response code="500">Error Interno de Servidor.</response>
+        [AllowAnonymous]
+        [ResponseType(typeof(OperationResult))]
+        [HttpPost]
+        [Route("consult/transaction")]
+        public TransactionDto ConsultTransaction(ConsultTransactionParam param)
+        {
+
+            #region Proceso
+
+            var result = _model.ConsultTransaction(param);
+
+            return result;
+
+            #endregion
+
+        }
+
     }
 }

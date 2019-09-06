@@ -56,6 +56,7 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsultTransactionParam.cs" />
     <Compile Include="CustomerDto.cs" />
     <Compile Include="CustomerParam.cs" />
     <Compile Include="Error.cs" />
