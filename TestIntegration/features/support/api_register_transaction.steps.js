@@ -2,27 +2,23 @@ const { Given, When, Then } = require('cucumber')
 const { expect } = require('chai')
 const httpClient = require('request-promise')
 
-let newtrans = {};
+
 let httpOptions = {};
 let TransctionResponse = undefined;
 
 Given('Los siguientes datos IdWallet {int}  IdtypeTransaction {int} Amount {int}', function (int, int2, int3) {
     // Write code here that turns the phrase above into concrete actions
-    newtrans = {
-        IdBilletera: int,
-        IdTipoTransaccion: int2,
-        Monto: int3
-      };
+    this.setToRegTrans(int,int2,int3);
   });
 
   When('Preparo el JSON de los datos', function () {
     // Write code here that turns the phrase above into concrete actions
     console.log('DONE');
 
-    var json =JSON.stringify(newtrans);
+    var json =JSON.stringify(this.getToRegTrans());
     httpOptions = {
       method: 'POST',
-      uri: 'http://localhost/ApiWallet/api/v1.0/wallet/register/transaction',
+      uri: this.getUrlApiRegisterTransaccion(),
       json: true,
       body: json,
       resolveWithFullResponse: true

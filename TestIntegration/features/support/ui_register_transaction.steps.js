@@ -16,7 +16,7 @@ Given('Dados datos de IDBILLETERA {string}  IDTRANSACCION {string} MONTO {string
 When('Navego a la pagina principal', async function () {
   // Write code here that turns the phrase above into concrete actions
   chromeDriver = await new Builder().forBrowser('chrome').build();
-  await chromeDriver.get(this.getUrlTransaccion());
+  await chromeDriver.get(this.getUrlRegisterTransaccion());
 });
 
 

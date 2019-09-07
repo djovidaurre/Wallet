@@ -2,26 +2,23 @@ const { Given, When, Then } = require('cucumber')
 const { expect } = require('chai')
 const httpClient = require('request-promise')
 
-let newtrans = {};
 let httpOptions = {};
 let TransctionResponse = undefined;
 
 
 Given('El datos IdWallet {int}', function (int) {
     // Write code here that turns the phrase above into concrete actions
-    newtrans = {
-        IdBilletera: int
-      };
+    this.setToNewTrans(int);
   });
 
   When('Preparo el JSON de los datos para consultar saldo final', function () {
     // Write code here that turns the phrase above into concrete actions
     console.log('DONE');
 
-    var json =JSON.stringify(newtrans);
+    var json =JSON.stringify(this.getToNewTrans());
     httpOptions = {
       method: 'POST',
-      uri: 'http://localhost/ApiWallet/api/v1.0/wallet/consult/transaction',
+      uri: this.getUrlApiConsultTransaccion(),
       json: true,
       body: json,
       resolveWithFullResponse: true
