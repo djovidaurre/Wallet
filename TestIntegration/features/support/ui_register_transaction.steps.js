@@ -52,5 +52,5 @@ Then('Debe validar que el monto total es {string}', async function (expected) {
   });
 
   expect(showText).to.eql(expected);
-  await chromeDriver.quit();
+  //await chromeDriver.quit();
 });

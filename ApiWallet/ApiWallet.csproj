@@ -180,6 +180,9 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Resource\UI.PNG" />
+    <Content Include="Resource\UnitTest.png" />
+    <Content Include="Resource\UnitTest_Api_UI.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
