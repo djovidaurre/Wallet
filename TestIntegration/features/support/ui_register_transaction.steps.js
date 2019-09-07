@@ -9,11 +9,23 @@ let monto = "";
 let chromeDriver = undefined;
 
 
-Given('Dados datos de IDBILLETERA {string}  IDTIPOTRANSACCION {string} MONTO {string}', function (string, string2, string3) {
+Given('Dados datos de IDBILLETERA {string}  IDTRANSACCION {string} MONTO {string}', function (string, string2, string3) {
   // Write code here that turns the phrase above into concrete actions
   idBilletera = string;
   idTransaccion = string2;
   monto = string3;
+});
+
+When('Navego a la pagina principal', async function () {
+  // Write code here that turns the phrase above into concrete actions
+  chromeDriver = await new Builder().forBrowser('chrome').build();
+  await chromeDriver.get('http://localhost/WebWallet/RegisterTransaction.aspx');
+});
+
+
+When('Llenar el campo de IdBilletera', async function () {
+  // Write code here that turns the phrase above into concrete actions
+  await chromeDriver.findElement(By.id('txt_IdWallet')).sendKeys(idBilletera);
 });
 
 When('Llenar el campo de IdTransaccion', async function () {
